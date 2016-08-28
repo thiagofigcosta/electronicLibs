@@ -1,0 +1,42 @@
+//criado por nanoTech
+
+void config(void){
+	#define CRYSTAL
+	int iclo=0;
+}
+
+
+void Delay_ms(float ms){
+	int CICLO=0;
+	ms=ms*1000;
+	if(ms>=0.01){
+		CICLO=(ms*CRYSTAL)/40000;
+		Delay10KTCYx(CICLO);
+	}else if(ms<=0.01 && ms>0.001){
+		CICLO=(ms*CRYSTAL)/4000;
+	 	Delay1KTCYx(CICLO);
+	}else if(ms<=0.001 && ms<0.0001){
+		CICLO=(ms*CRYSTAL)/400;
+		Delay100TCYx(CICLO);
+	}else if(ms<0.00001){
+		CICLO=(ms*CRYSTAL)/40;
+		Delay10TCYx(CICLO);
+	}
+}
+
+void Delay(float s){
+	int CICLO=0;
+	if(s>=0.01){
+		CICLO=(s*CRYSTAL)/40000;
+		Delay10KTCYx(CICLO);
+	}else if(s<=0.01 && s>0.001){
+		CICLO=(s*CRYSTAL)/4000;
+	 	Delay1KTCYx(CICLO);
+	}else if(s<=0.001 && s<0.0001){
+		CICLO=(s*CRYSTAL)/400;
+		Delay100TCYx(CICLO);
+	}else if(s<0.00001){
+		CICLO=(s*CRYSTAL)/40;
+		Delay10TCYx(CICLO);
+	}
+}
